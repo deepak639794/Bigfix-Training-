@@ -10,7 +10,7 @@ import (
 
 func read() {
 
-	f, err := os.Open("../Files/fixlets.csv")
+	f, err := os.Open("fixlets.csv")
 
 	if err != nil {
 		log.Fatal("Not able to open a file  ", err.Error())
@@ -110,10 +110,7 @@ func main() {
 		fmt.Print("1. Read the File \n2. Write to existing file \n3. Delete record \n->")
 
 		fmt.Scan(&choice)
-		if choice > 3 {
-			fmt.Print("lkjfas")
-			break
-		}
+
 		switch choice {
 		case 1:
 			read()
@@ -123,6 +120,9 @@ func main() {
 			delete()
 		default:
 			fmt.Print("wrong choice")
+		}
+		if choice > 3 {
+			break
 		}
 	}
 
